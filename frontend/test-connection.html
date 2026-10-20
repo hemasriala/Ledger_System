@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Connection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container">
+            <h2>Test Backend Connection</h2>
+            <p>Click the button to check the API health.</p>
+            <button id="testBtn" class="btn btn-primary" style="margin-top: 20px;">Test API</button>
+            <div id="message" class="message" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('testBtn').addEventListener('click', async () => {
+            const messageEl = document.getElementById('message');
+            try {
+                const response = await fetch('http://localhost:5000/api/health');
+                const data = await response.json();
+
+                if (response.ok) {
+                    messageEl.textContent = `Success: ${data.message}`;
+                    messageEl.className = 'message success';
+                } else {
+                    throw new Error(data.message || 'Server not responding');
+                }
+            } catch (error) {
+                messageEl.textContent = `Error: ${error.message}. Is the backend server running?`;
+                messageEl.className = 'message error';
+            }
+        });
+    </script>
+</body>
+</html>

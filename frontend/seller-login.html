@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n-key="seller_login_title">Seller Login/Register</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div style="text-align: right; padding: 10px; background: #fff; max-width: 450px; margin: 10px auto -40px; border-radius: 5px; position: relative; z-index: 10;">
+    <label for="lang-selector">Language: </label>
+    <select id="lang-selector">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी (Hindi)</option>
+      <option value="te">తెలుగు (Telugu)</option>
+    </select>
+  </div>
+  
+  <div class="auth-container">
+    <div class="auth-tabs">
+      <button class="tab-btn active" data-tab="login" data-i18n-key="login_tab">Login</button>
+      <button class="tab-btn" data-tab="register" data-i18n-key="register_tab">Register</button>
+    </div>
+
+    <div id="loginTab" class="tab-content active">
+      <h2 data-i18n-key="login_header">Seller Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginPhone" data-i18n-key="phone_label">Phone Number</label>
+          <input type="tel" id="loginPhone" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPin" data-i18n-key="pin_label">6-Digit PIN</label>
+          <input type="password" id="loginPin" required maxlength="6" inputmode="numeric">
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n-key="login_btn">Login</button>
+        <div id="loginMessage" class="message"></div>
+      </form>
+    </div>
+
+    <div id="registerTab" class="tab-content">
+      <h2 data-i18n-key="register_header">Seller Registration</h2>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="registerName" data-i18n-key="name_label">Full Name</label>
+          <input type="text" id="registerName" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPhone" data-i18n-key="phone_label">Phone Number</label>
+          <input type="tel" id="registerPhone" required>
+        </div>
+        <div class="form-group">
+          <label for="registerPin" data-i18n-key="pin_label">6-Digit PIN</label>
+          <input type="password" id="registerPin" required maxlength="6" inputmode="numeric">
+        </div>
+        <div class="form-group">
+          <label for="registerBusiness" data-i18n-key="business_name_label">Business Name (Optional)</label>
+          <input type="text" id="registerBusiness">
+        </div>
+        <button type="submit" class="btn btn-primary" data-i18n-key="register_btn">Register</button>
+        <div id="registerMessage" class="message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/i18n.js"></script> 
+  <script src="js/auth-seller.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,10 @@
+/START_BACKEND.md
+/START_HERE.md
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/

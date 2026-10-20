@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-key="customer_dashboard">Customer Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1><span data-i18n-key="welcome">Welcome</span>, <span id="userName"></span></h1>
+                <div class="user-info">
+                    <div style="text-align: right; padding: 10px; background: #fff; border-radius: 5px;">
+                        <label for="lang-selector">Language: </label>
+                        <select id="lang-selector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                            <option value="te">తెలుగు (Telugu)</option>
+                        </select>
+                    </div>
+                    <button id="logoutBtn" class="btn btn-secondary" data-i18n-key="logout_btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3 data-i18n-key="total_credit">Total Credit</h3>
+                <p id="totalCredit" class="amount credit">₹0.00</p>
+            </div>
+            <div class="summary-card">
+                <h3 data-i18n-key="total_debit">Total Debit</h3>
+                <p id="totalDebit" class="amount debit">₹0.00</p>
+            </div>
+            <div class="summary-card">
+                <h3 data-i18n-key="balance">Balance</h3>
+                <p id="balance" class="amount">₹0.00</p>
+            </div>
+        </section>
+
+        <section class="dashboard-content">
+            <div class="card">
+                <div class="card-header">
+                    <h2 data-i18n-key="all_transactions">All Transactions</h2>
+                    <input type="search" id="searchInput" class="search-input" data-i18n-key="search_placeholder" placeholder="Search transactions...">
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-i18n-key="date">Date</th>
+                                <th data-i18n-key="type">Type</th>
+                                <th data-i18n-key="description">Description</th>
+                                <th data-i18n-key="category">Category</th>
+                                <th data-i18n-key="seller_name">Seller Name</th>
+                                <th data-i18n-key="amount">Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsBody">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/customer-dashboard.js"></script>
+</body>
+</html>

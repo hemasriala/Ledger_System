@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n-key="welcome_title">Welcome - Digital Ledger</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Simple styles for the index page */
+        .auth-container {
+            text-align: center;
+        }
+        .auth-container h1 {
+            margin-bottom: 30px;
+        }
+        .index-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .btn-large {
+            padding: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: right; padding: 10px; background: #fff; max-width: 450px; margin: 10px auto -40px; border-radius: 5px; position: relative; z-index: 10;">
+      <label for="lang-selector">Language: </label>
+      <select id="lang-selector">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+      </select>
+    </div>
+
+    <div class="auth-container">
+        <h1 data-i18n-key="welcome_header">Welcome to Digital Ledger</h1>
+        <p data-i18n-key="welcome_subtitle" style="margin-bottom: 30px;">Please select your role to continue.</p>
+        <div class="index-nav">
+            <a href="seller-login.html" class="btn btn-primary btn-large" data-i18n-key="im_a_seller">I am a Seller</a>
+            <a href="customer-login.html" class="btn btn-secondary btn-large" data-i18n-key="im_a_customer">I am a Customer</a>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>
